@@ -1,0 +1,167 @@
+html {
+    font-size: 62.5%;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.menu-flex {
+    justify-content: space-between;
+    padding: 1rem;
+    border-top: 0.5rem solid #4b2828;
+}
+
+.inner-container {
+    background-color: #000000;
+}
+
+.inner-container img {
+    width: 19rem;
+}
+
+nav li a,
+nav li a:after {
+    font-size: 2.1rem;
+    font-weight: 300;
+    color: #f9e9d2;
+    font-family: 'Open Sans', sans-serif;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    border-bottom: 0.1rem solid #966a57;
+    padding: 2rem 0;
+}
+
+nav li:hover a:hover {
+	color: #000000;
+}
+
+nav li {
+    background-position: center;
+    transition: background 0.7s;
+}
+
+nav li:hover {
+    background: #f9e9d2 radial-gradient(circle, transparent 1%, #f9e9d2 1%) center/15000%;
+}
+
+nav li:active {
+  background-size: 100%;
+  transition: background 0.7s;
+}
+
+.toggle-icon span {
+    width: 6rem;
+    height: 1rem;
+    margin-bottom: 0.6rem;
+    border-radius: 10rem;
+    background-color: #f9e9d2;
+    display: block;
+    cursor: pointer;
+}
+
+/* default state of menu */
+
+
+.off-canvas-menu {
+    transition: all 1s ease-in-out;
+}
+
+.is-active .off-canvas-menu {
+    top: 0;
+    right: 0;
+    transition: all 1s ease-in-out;
+}
+
+nav {
+    min-width: 30rem;
+    max-height: 0;
+	overflow: hidden;
+	transition: all 0.7s ease-in-out;
+}
+
+.is-active {
+	max-height: 100vh;
+}
+
+.active-toggle {
+	margin-top: 2rem;
+}
+
+.active-toggle span:first-child {
+    position: absolute;
+    transform: rotate(-45deg);
+}	
+
+.active-toggle span:last-child {
+    transform: rotate(45deg);
+}
+
+.active-toggle span:nth-child(2) {
+    display: none;
+}
+
+footer {
+    margin-left: 1rem;
+}
+
+footer p {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    margin-top: 10rem;
+}
+
+@media only screen and (min-width: 800px) {
+	.toggle-icon {
+		display: none;
+	}
+
+	nav {
+		max-height: 13rem;
+	}
+
+	nav li a,
+	.menu-flex {
+		border: none;
+	}
+
+	nav li {
+		margin-right: 2rem;
+	}
+
+	.inner-container,
+	.menu-item {
+		display: flex;
+	}
+
+	.inner-container {
+		justify-content: space-between;
+		padding-right: 1rem;
+		border-top: 0.5rem solid #4b2828;
+	}
+
+	nav li:hover {
+		background: none;
+
+	}
+
+	nav li a {
+		padding: 0;
+		margin-top: 2rem;
+	}
+
+	nav li:hover a:hover {
+		color: #f9e9d2;
+		border-bottom: 0.1rem solid #f9e9d2;
+		padding-bottom: 0;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.inner-container {
+		padding: 0 16rem;
+	}
+}
