@@ -1,0 +1,36 @@
+<div class="404-banner">
+   <h1>Oh! Hello!</h1>
+   <h2>Looks like you found yourself a 404 page.</h2>
+   <h2>Nothing to see here!</h2>
+</div>
+
+<div class="404-search">
+   
+</div>
+
+<div class="404-archive">
+   <div class="flex-container">
+      <div>
+          <h2><?php _e( 'Recent Posts' ); ?></h2>
+          <div class="bar blue-bar"></div>
+          <!-- the function below only displays the 10 most recent posts -->
+          <?php wp_get_archives('type=postbypost&limit=10'); ?>
+      </div>
+      <div>
+          <!-- display all top-level categories -->
+          <h2><?php _e( 'Categories' ); ?></h2>
+          <div class="bar blue-bar"></div>
+          <?php wp_list_categories('depth=1'); ?>
+      </div>
+      <div>
+           <!-- display all the monthly archives in a list -->
+          <?php the_widget( 'WP_Widget_Archives',
+              array(
+              'orderby' => 'count',
+              'order' => 'DESC',
+              'show_count' => 1,
+          )); ?>
+      </div>
+     
+  </div>
+</div>
