@@ -13,7 +13,8 @@
 function dc_styles() {
 
     //google fonts
-    wp_enqueue_style('oxygen', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+    wp_enqueue_style('open sans', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+    wp_enqueue_style('permanent marker', 'https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
     //styles
     wp_enqueue_style( 'style', get_stylesheet_uri() );
