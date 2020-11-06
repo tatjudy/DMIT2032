@@ -73,6 +73,21 @@ function theme_setup() {
 }
 add_action('after_setup_theme', 'theme_setup');
 
+// Register Menus
+ // this will allow you have a navigation in your header and the
+ function register_menus() {
+   register_nav_menus(
+       array(
+           'main-menu' => 'Main Menu', /* Primary meny in the header */
+
+           //footer menu items
+           'footer-menu' => 'Footer Menu', 
+       )
+   );
+}
+add_action( 'init', 'register_menus' );
+
+
 // 
 $dc_includes = array(
    '/widgets.php', // Register widget area.
