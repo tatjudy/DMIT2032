@@ -14,7 +14,7 @@ footer content.
  <!-- closing tag for site-content> -->
         <footer>
             <?php get_template_part( 'template-parts/sidebar-footer', 'footer'); ?>
-            <?php echo date('Y'); ?>
+            <?php //echo date('Y'); ?>
         </footer>
         <?php wp_footer(); ?>
     </body>

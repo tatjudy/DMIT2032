@@ -17,6 +17,49 @@ container section (i.e. <div class="main-content").
     </head>
  <body <?php body_class(); ?> >
     <header>
+        <div class="inner-container">
+            <div class="menu-flex flex-container">
+                <div class="icons-flex flex-container">
+                    <div class="logo"></div>
+                    <div class="icons flex-container">
+                        <div class="flex-container">
+                            <div class="phone-icon"></div>
+                            <p>(780) 231-7798 | </p>
+                        </div>
+                        <div class="flex-container">
+                            <div class="mail-icon"></div>
+                            <p>info@lovingpaws.ca</p>
+                        </div>
+                            <!-- TOGGLE ICON -->
+                            <div class="toggle-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                    </div>
+                </div>  
+            </div>
+            
+            <nav class="off-canvas-menu">
 
+                <?php
+                    wp_nav_menu(
+                        //in our menu we need to use an array as there is number of
+                        //arguments we can use.
+                        //the most important is theme_location.
+                        array(
+                            'theme_location' => 'main-menu',
+                            //'container_class' => 'main-nav', //class that is applied to the container
+                            //'container_id' => 'main-nav', //id that is applied to the container.
+                            'menu_class' => 'menu-item', //class used for the ul element which forms the menu. 'Default Menu'
+                            'menu_id' => 'main-menu', //id used for the ul element which forms the menu. 'Default Menu'
+                            'fallback_cb' => '' //if the menu doesn't exsist, a
+                            //callback function will fire. Set to false for no fallback
+                        )
+                    );
+                ?>
+            </nav>
+
+        </div> <!--End of inner container-->
     </header>
     <div id="content" class="site-content" >
