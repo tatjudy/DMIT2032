@@ -1,3 +1,5 @@
+
+
 <?php
 /***
 * The template for displaying a 404 page.

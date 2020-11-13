@@ -31,7 +31,7 @@ get_header();
             <?php endif; ?>
 
         </header> 
-        <div class="flex-container">
+        <div class="flex-container sidebar-flex">
             <div class="container">
                 <?php while(have_posts()) : the_post(); ?>
                 <!-- - display a clickable link to the post/page based on the associated search term/post | -the_permalink()
@@ -48,7 +48,9 @@ get_header();
                 <!-- this would be where you add your right sidebar or widgets -->
                 <div class="blue-block"></div>
             </div>
-            <div class="orange-block"></div>
+            <div class="sidebar">
+                <?php dynamic_sidebar('sidebar-primary'); ?>
+            </div>
         </div>
 
 </main>

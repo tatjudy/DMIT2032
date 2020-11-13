@@ -14,7 +14,7 @@ get_header();
     </div>
 </div>
 
-<div class="flex-container">
+<div class="flex-container sidebar-flex">
     <article class="posts-container" <?php post_class();?> id="post-<?php the_ID();?>" >
         <div class="flex-container">
             <?php if(have_posts()) : ?>
@@ -43,7 +43,9 @@ get_header();
         </div>
         <div class="blue-block"></div>  
     </article>
-    <div class="orange-block"></div>
+    <div class="sidebar">
+        <?php dynamic_sidebar('sidebar-primary'); ?>
+    </div>
 </div>
 
 <!-- display footer -->

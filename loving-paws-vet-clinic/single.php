@@ -24,12 +24,14 @@ get_header();
     <?php if(have_posts()) : ?>
             <!-- start the loop -->
             <?php while(have_posts()) : the_post(); ?>
-            <div class="flex-container">
+            <div class="flex-container sidebar-flex">
                 <?php
                     //do things -- display content : the function below will pull the content from the template partial.
                     get_template_part( 'template-parts/content', 'page' );
                 ?>
-                <div class="orange-block"></div>
+                <div class="sidebar">
+                    <?php dynamic_sidebar('sidebar-primary'); ?>
+                </div>
             </div>    
             <div class="blue-block"></div>
             <?php endwhile; ?>
@@ -39,9 +41,6 @@ get_header();
                 <!-- send to search page / some other general page with search function, tags, categories, archives,etc.. -->
                 <?php get_template_part('template-parts/content', 'none'); ?>
         <?php endif; ?>
-        <div class="sidebar">
-            <?php dynamic_sidebar('sidebar-primary'); ?>
-        </div>
     <!-- display footer -->
     <?php get_footer(); ?>
 

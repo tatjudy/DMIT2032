@@ -82,6 +82,18 @@ if ( ! function_exists( 'dc_widget_areas' ) ) {
 
 	/** Initializes themes widgets.*/
 	function dc_widget_areas() {
+        register_sidebar(
+			array(
+				'name'          => __( 'Footer Full', 'dc' ),
+				'id'            => 'footer-full',
+				'description'   => __( 'footer-full widget area', 'dc' ),
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</aside>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+        );
+
 		register_sidebar(
 			array(
 				'name'          => __( 'Footer one', 'dc' ),
@@ -99,6 +111,17 @@ if ( ! function_exists( 'dc_widget_areas' ) ) {
 				'name'          => __( 'Footer 2', 'dc' ),
 				'id'            => 'footer-col-two',
 				'description'   => __( 'footer-col-two widget area', 'dc' ),
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</aside>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+        );
+        register_sidebar(
+			array(
+				'name'          => __( 'Footer 3', 'dc' ),
+				'id'            => 'footer-col-three',
+				'description'   => __( 'footer-col-three widget area', 'dc' ),
 				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</aside>',
 				'before_title'  => '<h3 class="widget-title">',

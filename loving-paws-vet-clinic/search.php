@@ -34,7 +34,6 @@ get_header();
             <?php endif; ?>
             <div class="blue-block"></div>
         </div>
-        <div class="orange-block"></div>
     </div>
     <!-- This is where you would add pagination. Pagination in a search result page is smart idea, especially if your search
     returns a lot of results.-->

@@ -16,11 +16,13 @@ container section (i.e. <div class="main-content").
         <?php wp_head(); ?>
     </head>
  <body <?php body_class(); ?> >
-    <header>
+    <header class="main-header">
         <div class="inner-container">
             <div class="menu-flex flex-container">
                 <div class="icons-flex flex-container">
-                    <div class="logo"></div>
+                    <a href="http://jtat2.dmitstudent.ca/dmit2032/loving-paws-vet-clinic/">
+                        <div class="logo"></div>
+                    </a>
                     <div class="icons flex-container">
                         <div class="flex-container">
                             <div class="phone-icon"></div>
@@ -41,7 +43,7 @@ container section (i.e. <div class="main-content").
             </div>
             
             <nav class="off-canvas-menu">
-
+                <a href="#" class="nav-btn">Request Appointment</a>
                 <?php
                     wp_nav_menu(
                         //in our menu we need to use an array as there is number of
