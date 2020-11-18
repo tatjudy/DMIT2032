@@ -103,22 +103,63 @@ foreach ( $dc_includes as $file ) {
 }
   
 add_action( 'widgets_init', 'dc_widgets_init' );
-   if ( ! function_exists( 'dc_widgets_init' ) ) {
+if ( ! function_exists( 'dc_widgets_init' ) ) {
    /**
    * Initializes themes widgets.
    */
-      function dc_widgets_init() {
-         register_sidebar(
-            array(
-               'name' => __( 'Footer Full', 'dc'
-            ),
-            'id' => 'footerfull',
-            'description' => __( 'Full sized footer widget with dynamic grid', 'dc' ),
-            'before_widget' => '<div id="%1$s" class="footerwidget %2$s dynamic-classes">',
-            'after_widget' => '</div><!-- .footer-widget -->',
-            'before_title' => '<h3 class="widget-title">',
-            'after_title' => '</h3>',
-            )
-         );
-      }
+   function dc_widgets_init() {
+      register_sidebar(
+         array(
+            'name' => __( 'Footer Full', 'dc'
+         ),
+         'id' => 'footerfull',
+         'description' => __( 'Full sized footer widget with dynamic grid', 'dc' ),
+         'before_widget' => '<div id="%1$s" class="footerwidget %2$s dynamic-classes">',
+         'after_widget' => '</div><!-- .footer-widget -->',
+         'before_title' => '<h3 class="widget-title">',
+         'after_title' => '</h3>',
+         )
+      );
    }
+} //end if
+
+   //Register Custom Post type
+function create_post_type_services(){
+   // creates label names for the post type in the dashboard the post panel and in the toolbar.
+   $labels = array(
+      'name' => __('Services'),
+      'singular_name' => __('Services'),
+      'add_new' => 'New Services',
+      'add_new_item' => 'Add New Services',
+      'edit_item' => 'Edit Services',
+      'featured_image' => _x( 'Services Post Image',
+      'Overrides the “Featured Image” phrase for this post type. Added in 4.3',
+      'textdomain' ),
+      'set_featured_image' => _x( 'Set cover image', 'Overrides
+      the “Set featured image” phrase for this post type. Added in 4.3',
+      'textdomain' ),
+      'remove_featured_image' => _x( 'Remove cover image',
+      'Overrides the “Remove featured image” phrase for this post type. Added in
+      4.3', 'textdomain' ),
+      'use_featured_image' => _x( 'Use as cover image',
+      'Overrides the “Use as featured image” phrase for this post type. Added in
+      4.3', 'textdomain' ),
+   );
+
+   // creates the post functionality that you want for a full listing
+   $args = array(
+      'labels' => $labels,
+      'public' => true,
+      'has_archive' => true,
+      'rewrite' => array('slug' => 'services'),
+      'menu_position' => 20,
+      'menu_icon' => 'dashicons-laptop',
+      'capability_type' => 'page',
+      'taxonomies' => array('category', 'post_tag'),
+      'supports' => array('title', 'editor', 'author',
+      'thumbnail', 'excerpt', 'custom-fields')
+   );
+   register_post_type('services', $args);
+}
+// Hooking up our function to theme setup
+add_action('init', 'create_post_type_services');
