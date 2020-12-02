@@ -30,7 +30,8 @@ h2,
 h3,
 .options a,
 .posts a,
-.blog-feat-flex h3 {
+.blog-feat-flex h3,
+.blog-content .card-heading {
 	font-family: 'Oxygen', sans-serif;
 }
 
@@ -50,11 +51,12 @@ h3,
 h1,
 .banner-content p,
 h2,
-.options a,
+.link-bkg a,
 .posts a,
 .archive-banner h1,
 .category-banner h1,
-.blog-feat-flex h3 {
+.blog-feat-flex h3,
+.card-heading {
 	font-weight: 300;
 }
 
@@ -86,14 +88,29 @@ footer h3,
 footer li a,
 .bottom-footer p,
 footer h2,
-.wpcf7-submit {
+.wpcf7-submit,
+.services-banner h1 {
 	color: #fff5ea;
 }
 
 
 /* orange font */
 
-.services h2, .left-section h2, .blog-feat h2, .left-side h2, .left-contact h2, .posts a:last-of-type, .archive .site-content h2, .entry-title, .blog-content-pg header a, .blog-content-pg header a:after, .category-title, .post-categories li>a, .search-form .form-control, ::placeholder, .error-404 .flex-container h2, .search-pg h2 {
+.services h2, 
+.left-section h2, 
+.blog-feat h2, 
+.left-side h2, 
+.left-contact h2, 
+.posts a:last-of-type, 
+.archive .site-content h2, 
+.entry-title, 
+.blog-content-pg header a, 
+.blog-content-pg header a:after, 
+.category-title, .post-categories li>a, 
+.search-form .form-control, ::placeholder, 
+.error-404 .flex-container h2, 
+.search-pg h2, 
+.services-description h2 {
 	color: #cc621b;
 }
 
@@ -109,7 +126,9 @@ footer h2,
 .blog-feat-flex h3 a:after,
 .not-found header h1,
 .not-found header h2,
-.sidebar h3 {
+.sidebar h3,
+.blog-content .card-heading,
+.blog-content .card-heading:after {
 	color: #414f76;
 }
 
@@ -151,12 +170,13 @@ footer li a,
 footer h2,
 .right-contact label,
 .right-contact select,
-.wpcf7-submit {
+.wpcf7-submit,
+.services-description h2,
+.all-services .card-heading {
 	text-transform: uppercase;
 }
 
 .blog-feat-flex h3 {
-	text-transform: lowercase;
 	text-transform: capitalize;
 }
 
@@ -168,7 +188,9 @@ footer h2,
 .archive-banner h1,
 .category-banner h1,
 .search-form p,
-footer h2 {
+footer h2,
+.services-banner h1,
+.services-description h2 {
 	text-align: center;
 }
 
@@ -195,7 +217,8 @@ h3 {
 
 .posts a,
 .blog-feat-flex h3,
-footer li a {
+footer li a,
+.blog-content .card-heading {
 	font-size: 2.4rem;
 }
 
@@ -222,7 +245,8 @@ h1,
 	line-height: 2.4rem;
 }
 
-.services p {
+.services p,
+.services-description p {
 	line-height: 2.7rem;
 	max-width: 77rem;
 	text-align: center;
@@ -493,38 +517,21 @@ nav li a,
 	max-width: 100%;
 }
 
-
 /* Services */
 
 .services {
 	margin: 6rem 3rem 8rem 3rem;
 }
 
-.options {
+.options,
+.all-services .blog-content {
 	position: relative;
 }
 
-.option-1 {
-	background: url('/dmit2032/loving-paws-vet-clinic/wp-content/uploads/2020/10/diet-nutrition.jpg');
-}
-
-.option-2 {
-	background: url('/dmit2032/loving-paws-vet-clinic/wp-content/uploads/2020/10/vaccinations.jpg');
-}
-
-.option-3 {
-	background: url('/dmit2032/loving-paws-vet-clinic/wp-content/uploads/2020/10/dental.jpg');
-}
-
-.option-4 {
-	background: url('/dmit2032/loving-paws-vet-clinic/wp-content/uploads/2020/10/exotic-care.jpg');
-}
-
-.option-1,
-.option-2,
-.option-3,
-.option-4 {
-	background-size: cover;
+.services-btn {
+	display: block;
+	width: fit-content;
+	margin: 0 auto 8rem auto;;
 }
 
 .services-options {
@@ -533,9 +540,10 @@ nav li a,
 	justify-content: center;
 }
 
-.services-options a {
+.services-options a,
+.all-services .card-heading {
 	text-align: center;
-	background-color: rgba(247, 235, 224, 0.5);
+	background-color: rgba(247, 235, 224, 0.8);
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -551,7 +559,8 @@ nav li a,
 	height: inherit;
 }
 
-.options-grey-bkg {
+.options-grey-bkg,
+.link-bkg img {
 	width: 28rem;
 	height: 30rem;
 }
@@ -625,7 +634,7 @@ nav li a,
 	margin-top: 10rem;
 }
 
-.blog-feat {
+.blog-feat h2 {
 	text-align: center;
 }
 
@@ -651,23 +660,16 @@ nav li a,
 }
 
 .blog-feat-flex p {
-	margin-top: 3rem;
+	margin: 3rem 0;
 }
 
-.blog-feat-img1 {
-	background: url("/dmit2032/loving-paws-vet-clinic/wp-content/uploads/2020/10/nyx-shiba-inu.jpg");
-	width: 27rem;
+.recent-blog img {
+    width: 27rem;
 	height: 27rem;
-	background-position: center;
-	background-size: contain;
 }
 
-.blog-feat-img2 {
-	background: url("/dmit2032/loving-paws-vet-clinic/wp-content/uploads/2020/10/ella-basic-health-and-care-tips-for-cats-blog.jpg");
-	width: 27rem;
-	height: 27rem;
-	background-position: center;
-	background-size: contain;
+.blog-content {
+	margin: 0 2rem 0rem 3rem;
 }
 
 .blog-feat-img1,
@@ -948,7 +950,8 @@ select {
 }
 
 .archive-banner h1,
-.category-banner h1 {
+.category-banner h1,
+.services-banner h1 {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -1131,6 +1134,32 @@ select {
 	color: black;
 }
 
+.services-banner {
+	background: url('/dmit2032/loving-paws-vet-clinic/wp-content/uploads/2020/12/services-banner.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 13rem;
+	max-width: 100vw;
+	height: 54rem;
+	position: relative;
+}
+
+.services-description {
+	margin-top: 7rem;
+}
+
+.all-services.flex-container {
+	flex-wrap: wrap;
+	justify-content: space-between
+}
+
+.all-services .blog-content {
+	width: 100%;
+	margin: 0;
+}
+
+.all-services .recent-blog {
+}
 
 /* footer */
 
@@ -1461,7 +1490,7 @@ svg {
 	}
 	/* Services */
 	.services {
-		padding: 6rem 10rem 8rem 10rem;
+		padding: 6rem 10rem 0 10rem;
 	}
 	/* services options */
 	.services-options {

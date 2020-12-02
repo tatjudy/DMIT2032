@@ -24,7 +24,7 @@ get_header();
                     <!-- display the all of the blog posts -->
                     <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
                     <div class="post-txt">
-                        <a href="<?php the_permalink(); ?>"><?php the_title();?></a>
+                        <a href="<?php the_permalink(); ?><?php the_title();?>"></a>
                         <p><?php echo get_the_date(); ?></p>
                         <p><?php echo the_category(); ?></p>
                         <?php the_excerpt(); ?>
@@ -42,6 +42,7 @@ get_header();
                   
         </div>
         <div class="blue-block"></div>  
+        <?php page_pagination() ?>
     </article>
     <div class="sidebar">
         <?php dynamic_sidebar('sidebar-primary'); ?>

@@ -153,7 +153,7 @@ function create_post_type_services(){
       'has_archive' => true,
       'rewrite' => array('slug' => 'services'),
       'menu_position' => 20,
-      'menu_icon' => 'dashicons-laptop',
+      'menu_icon' => 'dashicons-pets',
       'capability_type' => 'page',
       'taxonomies' => array('category', 'post_tag'),
       'supports' => array('title', 'editor', 'author',
@@ -163,3 +163,37 @@ function create_post_type_services(){
 }
 // Hooking up our function to theme setup
 add_action('init', 'create_post_type_services');
+
+//pagination
+function page_pagination() {
+   global $wp_query;
+
+   $total_pages = $wp_query->max_num_pages;
+
+   if($total_pages > 1) {
+      $current_page = max(1, get_query_var('paged'));
+      
+      echo paginate_links( array(
+         'base' => get_pagenum_link(1) . '%_%',
+         'format' => '/page/%#%/',
+         'current' => $current_page,
+         'total' => $total_pages,
+         'prev_text' => 'Prev',
+         'next_text' => 'Next'
+      ));
+   }
+}
+
+//Post pagination
+function post_pagination(){
+   global $wp_query;
+   ?>
+   <nav class="pagination" role="navigation">
+      <ul>
+         <li class="prev-post-nav"><?php previous_post_link('%link', '&larr; Older Post'); ?></li>
+         <li class="next-post-link"><?php next_post_link('%link', '&larr Newer Posts'); ?></li>
+      </ul>
+   
+   </nav>
+   <?php
+}

@@ -13,6 +13,11 @@ footer content.
             </div>
  <!-- closing tag for site-content> -->
         <footer>
+            <div>
+            </div>
+            <?php get_template_part( 'template-parts/sidebar-footer', 'footer'); ?>
+            <div>
+            </div>
         </footer>
         <?php wp_footer(); ?>
     </body>

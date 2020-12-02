@@ -10,6 +10,12 @@ get_header();
 ?>
 
     <div class="fw-container">
+        <div class="description">
+            <h2>Our Workshops</h2>
+            <p>Our goal is to make it easier for you to make great tasting coffee whether you are at home, work or on the go. Our workshops will teach you the basics of coffee to mastering latte art. Learning about coffee isn’t just for a barista, it’s for everyone!
+            </p>
+            <p>Sign up for one of workshops today and learn how to brew the perfect cup of coffee. </p>
+        </div>
         <?php if(have_posts()) : ?>
             <!-- start the loop -->
             <?php while(have_posts()) : the_post(); ?>

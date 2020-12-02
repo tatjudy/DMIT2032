@@ -15,6 +15,19 @@
         <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
         <?php the_date(); ?>
         <?php the_category(); ?>
+        
+        <?php
+            $categories = get_the_category( $post->ID);
+            foreach ( $categories as $category) {
+                print_r('
+                <p class="' .esc_html($category->slug).'">
+                    <a href="'. esc_url(get_category_link($category->term_id)) .'">
+                    
+                    </a>
+                </p>
+            ');
+            }
+        ?>
     </header>
 
     <div class="entry-content">

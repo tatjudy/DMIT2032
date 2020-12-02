@@ -101,3 +101,39 @@ add_action('after_setup_theme', 'theme_setup');
     }
     require_once $filepath;
  }
+
+//  custom post type
+
+//Register Custom Post type
+function create_post_type_workshops(){
+   // creates label names for the post type in the dashboard the post panel and in the toolbar.
+       $labels = array(
+           'name'                  => __('Workshops'),
+           'singular_name'         => __('Workshop'), 
+           'add_new'               => 'New Workshop', 
+           'add_new_item'          => 'Add New Workshop',
+           'edit_item'             => 'Edit Workshop',
+           'featured_image'        => _x( 'Workshop Post Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'textdomain' ),
+           'set_featured_image'    => _x( 'Set cover image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
+           'remove_featured_image' => _x( 'Remove cover image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
+           'use_featured_image'    => _x( 'Use as cover image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
+   
+       );
+       // creates the post functionality that you want for a full listing
+       $args = array(
+           'labels'            => $labels,
+           'public'            => true,
+           'has_archive'       => true,
+           'rewrite'           => array('slug' => 'workshops'),
+           'menu_position'     => 20,
+           'menu_icon'         => 'dashicons-coffee',
+           'capability_type'   => 'page',
+           'taxonomies'        => array('category', 'post_tag'),
+           'supports'          => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields')
+       );
+   
+       register_post_type('workshops', $args);
+   }
+   // Hooking up our function to theme setup
+   add_action('init', 'create_post_type_workshops');
+   
