@@ -36,21 +36,9 @@
                 <?php echo get_the_post_thumbnail($post->ID, 'large');?>
             </a>
             <div class="blog-content">
-            <a href="<?php the_permalink(); ?>">
-                <?php the_title('<h4 class="card-heading">', '</h4>'); ?>
-            </a>
-                <?php the_excerpt(); ?>
-            </div>
-            <div class="footer-right-content">
-                <?php
-                    $term = get_the_category();
-                    if($term) {
-                        foreach ($term as $t) {
-                            $t - get_term($t);
-                            esc_html_e('<a href="' . get_term_link($t) . '">'.$t->name . '</a>');
-                        }
-                    }
-                ?>
+                <a href="<?php the_permalink(); ?>">
+                    <?php the_title('<h4 class="card-heading">', '</h4>'); ?>
+                </a>
             </div>
         </div>
         <?php endwhile;?>

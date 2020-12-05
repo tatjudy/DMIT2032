@@ -48,7 +48,7 @@
     ?>
 
     <?php if ($cta_link) : ?>
-        <a class="btn services-btn" href="http://jtat2.dmitstudent.ca/dmit2032/loving-paws-vet-clinic/services/">View All Services</a>
+        <a class="btn services-btn" href="http://jtat2.dmitstudent.ca/dmit2032/loving-paws-vet-clinic/all-services/">View All Services</a>
     <?php endif; ?>
 
     <?php $cta_link = get_field('services_view_all_btn'); ?>
