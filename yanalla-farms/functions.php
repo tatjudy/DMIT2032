@@ -11,6 +11,11 @@
 
 function yanalla_styles() {
 
+   //google fonts
+   wp_enqueue_style( 'raleway', 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
+   wp_enqueue_style('merriweather', 'https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&display=swap');
+   wp_enqueue_style( 'montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
     //styles
     wp_enqueue_style( 'style', get_stylesheet_uri() );
     wp_enqueue_style( 'reset', get_template_directory_uri() . '/assets/css/reset.css', false, '1.0', 'all');
@@ -119,15 +124,15 @@ if ( ! function_exists( 'yanalla_widgets_init' ) ) {
 } //end if
 
    //Register Custom Post type
-function create_post_type_services(){
+function create_post_type_produce(){
    // creates label names for the post type in the dashboard the post panel and in the toolbar.
    $labels = array(
-      'name' => __('Services'),
-      'singular_name' => __('Services'),
-      'add_new' => 'New Services',
-      'add_new_item' => 'Add New Services',
-      'edit_item' => 'Edit Services',
-      'featured_image' => _x( 'Services Post Image',
+      'name' => __('Our Produce'),
+      'singular_name' => __('Produce'),
+      'add_new' => 'New Produce',
+      'add_new_item' => 'Add Produce',
+      'edit_item' => 'Edit Produce',
+      'featured_image' => _x( 'Produce Post Image',
       'Overrides the “Featured Image” phrase for this post type. Added in 4.3',
       'textdomain' ),
       'set_featured_image' => _x( 'Set cover image', 'Overrides
@@ -146,15 +151,15 @@ function create_post_type_services(){
       'labels' => $labels,
       'public' => true,
       'has_archive' => true,
-      'rewrite' => array('slug' => 'services'),
+      'rewrite' => array('slug' => 'produce'),
       'menu_position' => 20,
-      'menu_icon' => 'dashicons-laptop',
+      'menu_icon' => 'dashicons-palmtree',
       'capability_type' => 'page',
       'taxonomies' => array('category', 'post_tag'),
       'supports' => array('title', 'editor', 'author',
       'thumbnail', 'excerpt', 'custom-fields')
    );
-   register_post_type('services', $args);
+   register_post_type('produce', $args);
 }
 // Hooking up our function to theme setup
-add_action('init', 'create_post_type_services');
+add_action('init', 'create_post_type_produce');

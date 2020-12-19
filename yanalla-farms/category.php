@@ -38,17 +38,20 @@ get_header();
             creates a clickable link. -->
                 <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php
                 the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+                <a href="<?php the_permalink(); ?>">
+                    <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+                </a>
+
                 <p><?php the_date(); ?></p>
                 <p><?php the_category(); ?></p>
                 <p><?php the_excerpt(); ?></p>
+                <a href="<?php the_permalink(); ?>">Read More ></a>
                 <?php endwhile;
                 else: ?>
                     <?php get_template_part('template-parts/content', 'none'); ?>
                 <?php endif; ?>
                 <!-- this would be where you add your right sidebar or widgets -->
-                <div class="blue-block"></div>
             </div>
-            <div class="orange-block"></div>
         </div>
 
 </main>

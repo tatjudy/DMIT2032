@@ -759,8 +759,9 @@ li {
 .left-side li:before,
 .archive-content li:before,
 .error-404 .flex-container li:before,
-.sidebar li:before {
-	content: "- ";
+.sidebar li:before,
+.blocks li:before {
+	content: "— ";
 	color: #65e6f7;
 }
 
@@ -1415,12 +1416,85 @@ svg {
 	padding: 2rem;
 }
 
+.blocks.flex-container {
+	flex-direction: column;
+}
+
+.blocks-content {
+	max-width: 70rem;
+	padding-left: 3rem;
+}
+
+.blocks-content h3 {
+	margin-bottom: 2rem;
+}
+
+.blocks-content p {
+	margin-bottom: 3rem;
+}
+
 .thumb {
+	margin: 0 auto;
+}
+.diet-nutrition-container .thumb-one {
 	background: url('/dmit2032/loving-paws-vet-clinic/wp-content/uploads/2020/12/maintain-weight-1.jpg');
-	width: 36rem;
+}
+
+.diet-nutrition-container .thumb-two {
+	background: url('/dmit2032/loving-paws-vet-clinic/wp-content/uploads/2020/12/ferret-diet-helps-pet-1.jpg');
+}
+
+.dental-container .thumb-one {
+	background: url('/dmit2032/loving-paws-vet-clinic/wp-content/uploads/2020/12/dentists-look-for.jpg');
+}
+
+.dental-container .thumb-two {
+	background: url('/dmit2032/loving-paws-vet-clinic/wp-content/uploads/2020/12/dental-problems.jpg');
+}
+
+.dental-container .thumb-three {
+	background: url('/dmit2032/loving-paws-vet-clinic/wp-content/uploads/2020/12/dental-how-we-can-help.jpg');
+}
+
+.wellness-container .thumb-one {
+	background: url('/dmit2032/loving-paws-vet-clinic/wp-content/uploads/2020/12/kitten-what-to-expect.jpg');
+}
+
+.wellness-container .thumb-two {
+	background: url('/dmit2032/loving-paws-vet-clinic/wp-content/uploads/2020/12/sugar-glider-wellness-exams-important.jpg');
+}
+
+.wellness-container .thumb-three {
+	background: url('/dmit2032/loving-paws-vet-clinic/wp-content/uploads/2020/12/chinchilla-pet-visit.jpg');
+}
+
+.vaccinations-container .thumb-one {
+	background: url('/dmit2032/loving-paws-vet-clinic/wp-content/uploads/2020/12/german-sheppard-get-pet-vaccinated.jpg');
+}
+
+.vaccinations-container .thumb-two {
+	background: url('/dmit2032/loving-paws-vet-clinic/wp-content/uploads/2020/12/husky-vaccines-adminstered.jpg');
+}
+
+.diet-nutrition-container .thumb-one,
+.diet-nutrition-container .thumb-two,
+.dental-container .thumb-one,
+.dental-container .thumb-two,
+.dental-container .thumb-three,
+.wellness-container .thumb-one,
+.wellness-container .thumb-two,
+.wellness-container .thumb-three,
+.vaccinations-container .thumb-one,
+.vaccinations-container .thumb-two {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+	width: 36rem;
+	height: 35rem;
+}
+
+.thumb {
+ margin-bottom: 3rem;
 }
 
 /* responsive styles */
@@ -1699,11 +1773,21 @@ svg {
 	.bottom-footer {
 		padding: 2rem 10rem;
 	}
-
 	.cpt-half-container {
 		flex-direction: row;
 	}
 	.cpt-single-right {
 		height: 100vh;
+	}
+	.blocks.flex-container:nth-of-type(even) {
+		flex-direction: row-reverse;
+	}
+
+	.blocks.flex-container {
+		flex-direction: row;
+	}
+
+	.thumb {
+		margin-bottom: 0;
 	}
 }
